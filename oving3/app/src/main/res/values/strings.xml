@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">oving3</string>
+
+    <string name="title">Registrer venn</string>
+    <string name="name">Navn</string>
+    <string name="birthday">Bursdag</string>
+    <string name="add_friend_button">Legg til venn</string>
+
+</resources>

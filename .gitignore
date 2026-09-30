@@ -1,0 +1,20 @@
+# Gradle / build output
+.gradle/
+.kotlin/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+
+# Machine-specific (contains local SDK path)
+local.properties
+
+# macOS
+.DS_Store
+
+# Archives
+*.zip

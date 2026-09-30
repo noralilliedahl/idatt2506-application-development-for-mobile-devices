@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">oving2</string>
+
+    <!-- Top -->
+    <string name="header">Ukens oppskrifter</string>
+    <string name="seasonal_badge">Høst</string>
+    <string name="image_descriptor">Dekorativt bilde for oppskriftsoversikt</string>
+
+    <!-- Knapp -->
+    <string name="show_count_button">Vis antall oppskrifter</string>
+    <string name="recipe_count_toast">Antall oppskrifter: %1$d</string>
+</resources>
+
