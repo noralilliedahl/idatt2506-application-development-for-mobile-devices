@@ -17,7 +17,7 @@ class GameViewModel : ViewModel() {
 
     fun onNameChange(value: String) = state.update { it.copy(name = value) }
     fun onCardNumChange(value: String) = state.update { it.copy(cardNum = value) }
-    fun onGuessChange (value: String) = state.update { it.copy(guess = value) }
+    fun onGuessChange(value: String) = state.update { it.copy(guess = value) }
 
     fun startGame() {
         viewModelScope.launch {
