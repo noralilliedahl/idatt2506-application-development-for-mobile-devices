@@ -4,13 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.runtime.getValue
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.app.oving5.ui.GameScreen
+import com.app.oving5.ui.GameViewModel
 import com.app.oving5.ui.theme.Oving5Theme
 
 class MainActivity : ComponentActivity() {
@@ -19,29 +17,19 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Oving5Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                val viewModel: GameViewModel = viewModel()
+                val state by viewModel.uiState.collectAsStateWithLifecycle()
+
+                GameScreen(
+                    state = state,
+                    onNameChange = viewModel::onNameChange,
+                    onCardNumChange = viewModel::onCardNumChange,
+                    onGuessChange = viewModel::onGuessChange,
+                    onStartGame = viewModel::startGame,
+                    onGuess = viewModel::guess,
+                    onStartOver = viewModel::startOver
+                )
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Oving5Theme {
-        Greeting("Android")
     }
 }
