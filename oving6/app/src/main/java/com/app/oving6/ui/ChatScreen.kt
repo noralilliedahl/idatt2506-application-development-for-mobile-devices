@@ -1,5 +1,8 @@
 package com.app.oving6.ui
 
+import android.Manifest
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -34,15 +37,27 @@ import com.app.oving6.ui.theme.Oving6Theme
 
 @Composable
 fun ChatScreenWithViewModel(viewModel: ChatViewModel = viewModel()) {
+
     val state by viewModel.uiState.collectAsStateWithLifecycle()
     var draft by rememberSaveable { mutableStateOf("") }
 
+    var asServer by rememberSaveable { mutableStateOf(false) }
+
+    val launcher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission())
+    {
+        if (asServer) viewModel.startAsServer() else viewModel.startAsClient()
+    }
+
+    fun chooseRole(server: Boolean) {
+        asServer = server
+        launcher.launch(Manifest.permission.ACCESS_LOCAL_NETWORK)
+    }
     ChatScreen(
         state = state,
         draft = draft,
         onDraftChange = { draft = it },
-        onStartAsServer = viewModel::startAsServer,
-        onStartAsClient = viewModel::startAsClient,
+        onStartAsServer = { chooseRole(server = true) },
+        onStartAsClient = { chooseRole(server = false) },
         onSend = {
             viewModel.send(draft)
             draft = ""
@@ -139,7 +154,7 @@ fun MessageInput(
             value = value,
             onValueChange = onValueChange,
             label = { Text(stringResource(R.string.message)) },
-            singleLine = true,   // linjeskift ville blitt to meldinger
+            singleLine = true,
             modifier = Modifier.weight(1f)
         )
         Button(onClick = onSend, enabled = value.isNotBlank()) {
