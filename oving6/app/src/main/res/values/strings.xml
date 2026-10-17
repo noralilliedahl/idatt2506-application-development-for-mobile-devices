@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">oving6</string>
+    <string name="title">Chat</string>
+    <string name="choose_role">Velg rolle</string>
+    <string name="be_server">Vær tjener</string>
+    <string name="connect">Koble til</string>
+    <string name="server">Tjener</string>
+    <string name="client">Klient</string>
+    <string name="role_and_connected">%1$s · %2$d tilkoblet</string>
+    <string name="by_me">Meg: %1$s</string>
+    <string name="by_other">Annen: %1$s</string>
+    <string name="someone_left">En deltaker forlot samtalen</string>
+    <string name="message">Melding</string>
+    <string name="send">Send</string>
 </resources>
