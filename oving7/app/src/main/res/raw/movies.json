@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Shrek",
+    "released": 2001,
+    "directors": ["Andrew Adamson", "Vicky Jenson"],
+    "actors": ["Mike Myers", "Eddie Murphy", "Cameron Diaz", "John Lithgow"]
+  },
+  {
+    "title": "Shrek 2",
+    "released": 2004,
+    "directors": ["Andrew Adamson", "Kelly Asbury", "Conrad Vernon"],
+    "actors": ["Mike Myers", "Eddie Murphy", "Cameron Diaz", "Antonio Banderas"]
+  },
+  {
+    "title": "Kung Fu Panda",
+    "released": 2008,
+    "directors": ["John Stevenson", "Mark Osborne"],
+    "actors": ["Jack Black", "Dustin Hoffman", "Angelina Jolie", "Ian McShane", "Jackie Chan"]
+  },
+  {
+    "title": "Kung Fu Panda 2",
+    "released": 2011,
+    "directors": ["Jennifer Yuh Nelson"],
+    "actors": ["Jack Black", "Angelina Jolie", "Dustin Hoffman", "Gary Oldman", "Jackie Chan"]
+  },
+  {
+    "title": "Notting Hill",
+    "released": 1999,
+    "directors": ["Roger Michell"],
+    "actors": ["Julia Roberts", "Hugh Grant", "Rhys Ifans"]
+  }
+]
